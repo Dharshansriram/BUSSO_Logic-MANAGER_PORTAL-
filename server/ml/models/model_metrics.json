@@ -1,0 +1,1 @@
+{"modelVersion":"logistic-js-v1.0","trainedSamples":1000,"testSamples":200,"accuracy":91,"precision":88.9,"recall":83.6,"f1Score":86.2,"rocAuc":97.4,"featureWeights":{"blocked":5.267,"priority_score":3.394,"urgency_score":4.555,"overrun_ratio":3.389,"overload_ratio":4.27},"intercept":-6.999,"status":"active"}

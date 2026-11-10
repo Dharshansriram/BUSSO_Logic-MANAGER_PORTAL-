@@ -1,0 +1,40 @@
+{
+  "name": "intelliflow",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -k -n api,web \"npm:dev:api\" \"npm:dev:frontend\"",
+    "dev:frontend": "vite",
+    "dev:api": "node --watch server/index.js",
+    "dev:backend": "python -m uvicorn backend.main:app --reload --port 8000",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "start:python": "python -m uvicorn backend.main:app --port 8000",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:backend": "pytest backend/tests -v",
+    "db:check": "python -c \"import backend.core.database as d; print('BUSSOLOGIC database ready')\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^4.21.2",
+    "googleapis": "^189.0.0",
+    "mammoth": "^1.8.0",
+    "mongodb": "^6.10.0",
+    "mongoose": "^9.11.1",
+    "nodemailer": "^10.4.1",
+    "pdf-parse": "^1.1.1",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.0.1",
+    "prettier": "^3.6.2",
+    "vite": "^7.1.7",
+    "vitest": "^5.0.4"
+  }
+}
